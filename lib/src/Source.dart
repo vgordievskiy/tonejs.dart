@@ -1,80 +1,81 @@
-@JS('Source')
-library Source;
+@JS('Tone')
+library Tone.impl;
 
+import 'dart:web_audio';
 import "package:js/js.dart";
 import "_vanilaJs.dart";
 
 @JS('Abs')
 class Abs{
- /*  extends Tone.SignalBase */
- external Tone.Abs dispose();
+ /*  extends SignalBase */
+ external Abs dispose();
 }
 
 @JS('Add')
 class Add{
- /*  extends Tone.Signal */
- external Tone.Add dispose();
+ /*  extends Signal */
+ external Add dispose();
 }
 
 @JS('AmplitudeEnvelope')
 class AmplitudeEnvelope{
- /*  extends Tone.Envelope */
- external Tone.AmplitudeEnvelope dispose();
+ /*  extends Envelope */
+ external AmplitudeEnvelope dispose();
 }
 
 @JS('AMSynth')
 class AMSynth{
- /*  extends Tone.Monophonic */
- external Tone.MonoSynth get carrier;
- external Tone.Signal get frequency;
+ /*  extends Monophonic */
+ external MonoSynth get carrier;
+ external Signal get frequency;
  external num get harmonicity;
- external Tone.MonoSynth get modulator;
- external Tone.AMSynth dispose();
- external Tone.AMSynth triggerEnvelopeAttack([Tone.Time time, num velocity]);
- external Tone.AMSynth triggerEnvelopeRelease([Tone.Time time]);
+ external MonoSynth get modulator;
+ external AMSynth dispose();
+ external AMSynth triggerEnvelopeAttack([Time time, num velocity]);
+ external AMSynth triggerEnvelopeRelease([Time time]);
 }
 
 @JS('AND')
 class AND{
- /*  extends Tone.SignalBase */
- external Tone.AND dispose();
+ /*  extends SignalBase */
+ external AND dispose();
 }
 
 @JS('AudioToGain')
 class AudioToGain{
- /*  extends Tone.SignalBase */
- external Tone.AudioToGain dispose();
+ /*  extends SignalBase */
+ external AudioToGain dispose();
 }
 
 @JS('AutoPanner')
 class AutoPanner{
  /*  extends Effect */
- external Tone.Signal get amount;
- external Tone.Signal get frequency;
+ external Signal get amount;
+ external Signal get frequency;
  external String get type;
- external Tone.AutoPanner dispose();
- external Tone.AutoPanner start([Tone.Time Time]);
- external Tone.AutoPanner stop([Tone.Time Time]);
- external Tone.AutoPanner sync();
- external Tone.AutoPanner unsync();
+ external AutoPanner dispose();
+ external AutoPanner start([Time Time]);
+ external AutoPanner stop([Time Time]);
+ external AutoPanner sync();
+ external AutoPanner unsync();
 }
 
 @JS('AutoWah')
 class AutoWah{
- /*  extends Tone.Effect */
- external Tone.Frequency get baseFrequency;
- external Tone.Signal get gain;
+ /*  extends Effect */
+ external Frequency get baseFrequency;
+ external Signal get gain;
  external num get octaves;
- external Tone.Signal get Q;
+ external Signal get Q;
  external num get sensitivity;
- external Tone.AutoWah dispose();
+ external AutoWah dispose();
 }
 
 @JS('BitCrusher')
 class BitCrusher{
- /*  extends Tone.Effect */
+ /*  extends Effect */
  external num get bits;
- external Tone.BitCrusher dispose();
+ external BitCrusher dispose();
 }
 
 @JS('Buffer')
@@ -83,59 +84,60 @@ class Buffer{
  external num get MAX_SIMULTANEOUS_DOWNLOADS;
  external num get duration;
  external bool get loaded;
- external  dynamic onload(dynamic e); get onload;
+ external set onload(dynamic e);
+ external dynamic get onload;
  external String get url;
- external Tone.Buffer load(String url, [ dynamic callback(dynamic e)]);
+ external Buffer load(String url, [ dynamic callback(dynamic e)]);
  external /*todo type MethodSignature*/ dynamic onerror();
  external /*todo type MethodSignature*/ dynamic onprogress();
- external Tone.Buffer dispose();
+ external Buffer dispose();
  external AudioBuffer get();
- external Tone.Buffer set(dynamic buffer);
+ external Buffer set(dynamic buffer);
 }
 
 @JS('Chebyshev')
 class Chebyshev{
- /*  extends Tone.Effect */
+ /*  extends Effect */
  external num get order;
  external String get oversample;
- external Tone.Chebyshev dispose();
+ external Chebyshev dispose();
 }
 
 @JS('Chorus')
 class Chorus{
- /*  extends Tone.StereoXFeedbackEffect */
+ /*  extends StereoXFeedbackEffect */
  external num get delayTime;
  external num get depth;
- external Tone.Signal get frequency;
+ external Signal get frequency;
  external String get type;
- external Tone.Chorus dispose();
+ external Chorus dispose();
 }
 
 @JS('Clip')
 class Clip{
- /*  extends Tone.SignalBase */
- external Tone.Signal get max;
- external Tone.Signal get min;
- external Tone.Clip dispose();
+ /*  extends SignalBase */
+ external Signal get max;
+ external Signal get min;
+ external Clip dispose();
 }
 
 @JS('Compressor')
 class Compressor{
  /*  extends Tone */
- external Tone.Signal get attack;
+ external Signal get attack;
  external AudioParam get knee;
  external AudioParam get ratio;
- external Tone.Signal get release;
+ external Signal get release;
  external AudioParam get threshold;
- external Tone.Compressor dispose();
+ external Compressor dispose();
 }
 
 @JS('Convolver')
 class Convolver{
- /*  extends Tone.Effect */
+ /*  extends Effect */
  external AudioBuffer get buffer;
- external Tone.Convolver load(String url, [ dynamic callback(dynamic e)]);
- external Tone.Convolver dispose();
+ external Convolver load(String url, [ dynamic callback(dynamic e)]);
+ external Convolver dispose();
 }
 
 @JS('CrossFade')
@@ -143,151 +145,151 @@ class CrossFade{
  /*  extends Tone */
  external GainNode get a;
  external GainNode get b;
- external Tone.Signal get fade;
- external Tone.CrossFade dispose();
+ external Signal get fade;
+ external CrossFade dispose();
 }
 
 @JS('Distortion')
 class Distortion{
- /*  extends Tone.Effect */
+ /*  extends Effect */
  external num get distortion;
  external String get oversample;
- external Tone.Distortion dispose();
+ external Distortion dispose();
 }
 
 @JS('DuoSynth')
 class DuoSynth{
- /*  extends Tone.Monophonic */
- external Tone.Signal get frequency;
+ /*  extends Monophonic */
+ external Signal get frequency;
  external num get harmonicity;
- external Tone.Signal get vibratoAmount;
- external Tone.Signal get vibratoRate;
- external Tone.MonoSynth get voice0;
- external Tone.MonoSynth get voice1;
- external Tone.DuoSynth triggerEnvelopeAttack([Tone.Time time, num velocity]);
- external Tone.DuoSynth triggerEnvelopeRelease([Tone.Time time]);
+ external Signal get vibratoAmount;
+ external Signal get vibratoRate;
+ external MonoSynth get voice0;
+ external MonoSynth get voice1;
+ external DuoSynth triggerEnvelopeAttack([Time time, num velocity]);
+ external DuoSynth triggerEnvelopeRelease([Time time]);
 }
 
 @JS('Effect')
 class Effect{
  /*  extends Tone */
- external Tone.Signal get wet;
- external Tone.Effect bypass();
- external Tone.Effect dispose();
+ external Signal get wet;
+ external Effect bypass();
+ external Effect dispose();
 }
 
 @JS('Envelope')
 class Envelope{
  /*  extends Tone */
- external Tone.Time get attack;
- external Tone.Time get decay;
- external Tone.Time get release;
+ external Time get attack;
+ external Time get decay;
+ external Time get release;
  external num get sustain;
- external Tone.Envelope dispose();
- external Tone.Envelope triggerAttack([Tone.Time time, num velocity]);
- external Tone.Envelope triggerAttackRelease(Tone.Time duration, [Tone.Time time, num velocity]);
- external Tone.Envelope triggerRelease([Tone.Time time]);
+ external Envelope dispose();
+ external Envelope triggerAttack([Time time, num velocity]);
+ external Envelope triggerAttackRelease(Time duration, [Time time, num velocity]);
+ external Envelope triggerRelease([Time time]);
 }
 
 @JS('EQ3')
 class EQ3{
  /*  extends Tone */
- external Tone.Signal get highFrequency;
+ external Signal get highFrequency;
  external GainNode get high;
- external Tone.Signal get lowFrequency;
+ external Signal get lowFrequency;
  external GainNode get low;
  external GainNode get mid;
- external Tone.EQ3 dispose();
+ external EQ3 dispose();
 }
 
 @JS('Equal')
 class Equal{
- /*  extends Tone.SignalBase */
+ /*  extends SignalBase */
  external num get value;
- external Tone.Equal dispose();
+ external Equal dispose();
 }
 
 @JS('EqualPowerGain')
 class EqualPowerGain{
- /*  extends Tone.SignalBase */
- external Tone.EqualPowerGain dispose();
+ /*  extends SignalBase */
+ external EqualPowerGain dispose();
 }
 
 @JS('EqualZero')
 class EqualZero{
- /*  extends Tone.SignalBase */
- external Tone.EqualZero dispose();
+ /*  extends SignalBase */
+ external EqualZero dispose();
 }
 
 @JS('Expr')
 class Expr{
- /*  extends Tone.SignalBase */
+ /*  extends SignalBase */
  external dynamic get input;
  external dynamic get output;
- external Tone.Expr dispose();
+ external Expr dispose();
 }
 
 @JS('FeedbackCombFilter')
 class FeedbackCombFilter{
  /*  extends Tone */
- external Tone.Time get delayTime;
- external Tone.Signal get resonance;
- external Tone.FeedbackCombFilter dispose();
+ external Time get delayTime;
+ external Signal get resonance;
+ external FeedbackCombFilter dispose();
 }
 
 @JS('FeedbackDelay')
 class FeedbackDelay{
- /*  extends Tone.FeedbackEffect */
- external Tone.Signal get delayTime;
- external Tone.FeedbackDelay dispose();
+ /*  extends FeedbackEffect */
+ external Signal get delayTime;
+ external FeedbackDelay dispose();
 }
 
 @JS('FeedbackEffect')
 class FeedbackEffect{
- /*  extends Tone.Effect */
- external Tone.Signal get feedback;
- external Tone.FeedbackEffect dispose();
+ /*  extends Effect */
+ external Signal get feedback;
+ external FeedbackEffect dispose();
 }
 
 @JS('Filter')
 class Filter{
  /*  extends Tone */
- external Tone.Signal get detune;
- external Tone.Signal get frequency;
+ external Signal get detune;
+ external Signal get frequency;
  external AudioParam get gain;
- external Tone.Signal get Q;
+ external Signal get Q;
  external num get rolloff;
  external String get type;
- external Tone.Filter dispose();
+ external Filter dispose();
 }
 
 @JS('FMSynth')
 class FMSynth{
- /*  extends Tone.Monophonic */
- external Tone.MonoSynth get carrier;
- external Tone.Signal get frequency;
+ /*  extends Monophonic */
+ external MonoSynth get carrier;
+ external Signal get frequency;
  external num get harmonicity;
  external num get modulationIndex;
- external Tone.MonoSynth get modulator;
- external Tone.FMSynth dispose();
- external Tone.FMSynth triggerEnvelopeAttack([Tone.Time time, num velocity]);
- external Tone.FMSynth triggerEnvelopeRelease([Tone.Time time]);
+ external MonoSynth get modulator;
+ external FMSynth dispose();
+ external FMSynth triggerEnvelopeAttack([Time time, num velocity]);
+ external FMSynth triggerEnvelopeRelease([Time time]);
 }
 
 @JS('Follower')
 class Follower{
  /*  extends Tone */
- external Tone.Time get attack;
- external Tone.Time get release;
- external Tone.Follower dispose();
+ external Time get attack;
+ external Time get release;
+ external Follower dispose();
 }
 
 @JS('Freeverb')
 class Freeverb{
- /*  extends Tone.Effect */
- external Tone.Signal get dampening;
- external Tone.Signal get roomSize;
- external Tone.Freeverb dispose();
+ /*  extends Effect */
+ external Signal get dampening;
+ external Signal get roomSize;
+ external Freeverb dispose();
 }
 
 @JS('TimeBase')
@@ -317,100 +319,100 @@ class Frequency{
 @JS('Gate')
 class Gate{
  /*  extends Tone */
- external Tone.Time get attack;
- external Tone.Time get release;
- external Tone.Time get threshold;
- external Tone.Gate dispose();
+ external Time get attack;
+ external Time get release;
+ external Time get threshold;
+ external Gate dispose();
 }
 
 @JS('GreaterThan')
 class GreaterThan{
- /*  extends Tone.Signal */
- external Tone.GreaterThan dispose();
+ /*  extends Signal */
+ external GreaterThan dispose();
 }
 
 @JS('GreaterThanZero')
 class GreaterThanZero{
- /*  extends Tone.SignalBase */
- external Tone.GreaterThanZero dispose();
+ /*  extends SignalBase */
+ external GreaterThanZero dispose();
 }
 
 @JS('IfThenElse')
 class IfThenElse{
- /*  extends Tone.SignalBase */
- external Tone.IfThenElse dispose();
+ /*  extends SignalBase */
+ external IfThenElse dispose();
 }
 
 @JS('Instrument')
 class Instrument{
  /*  extends Tone */
- external Tone.Signal get volume;
- external Tone.Instrument triggerAttack(dynamic note, [Tone.Time time, num velocity]);
- external Tone.Instrument triggerAttackRelease(dynamic note, Tone.Time duration, [Tone.Time time, num velocity]);
- external Tone.Instrument triggerRelease([Tone.Time time]);
- external Tone.Instrument dispose();
+ external Signal get volume;
+ external Instrument triggerAttack(dynamic note, [Time time, num velocity]);
+ external Instrument triggerAttackRelease(dynamic note, Time duration, [Time time, num velocity]);
+ external Instrument triggerRelease([Time time]);
+ external Instrument dispose();
 }
 
 @JS('JCReverb')
 class JCReverb{
- /*  extends Tone.Effect */
- external Tone.Signal get roomSize;
- external Tone.JCReverb dispose();
+ /*  extends Effect */
+ external Signal get roomSize;
+ external JCReverb dispose();
 }
 
 @JS('LessThan')
 class LessThan{
- /*  extends Tone.Signal */
- external Tone.LessThan dispose();
+ /*  extends Signal */
+ external LessThan dispose();
 }
 
 @JS('LFO')
 class LFO{
- /*  extends Tone.Oscillator */
- external Tone.Signal get amplitude;
- external Tone.Signal get frequency;
+ /*  extends Oscillator */
+ external Signal get amplitude;
+ external Signal get frequency;
  external num get max;
  external num get min;
- external Tone.Oscillator get oscillator;
+ external Oscillator get oscillator;
  external num get phase;
  external String get type;
- external Tone.LFO dispose();
- external Tone.LFO start([Tone.Time time]);
- external Tone.LFO stop([Tone.Time time]);
- external Tone.LFO sync([Tone.Time delay]);
- external Tone.LFO unsync();
+ external LFO dispose();
+ external LFO start([Time time]);
+ external LFO stop([Time time]);
+ external LFO sync([Time delay]);
+ external LFO unsync();
 }
 
 @JS('Limiter')
 class Limiter{
  /*  extends Tone */
- external Tone.Limiter dispose();
+ external Limiter dispose();
 }
 
 @JS('LowpassCombFilter')
 class LowpassCombFilter{
  /*  extends Tone */
- external Tone.Signal get dampening;
- external Tone.Time get delayTime;
- external Tone.Signal get resonance;
- external Tone.LowpassCombFilter dispose();
- external Tone.LowpassCombFilter setDelayTimeAtTime(Tone.Time delayAmount, [Tone.Time time]);
+ external Signal get dampening;
+ external Time get delayTime;
+ external Signal get resonance;
+ external LowpassCombFilter dispose();
+ external LowpassCombFilter setDelayTimeAtTime(Time delayAmount, [Time time]);
 }
 
 @JS('Master')
 class Master{
  /*  extends Tone */
- external Tone.Signal get volume;
- external Tone.Master mute();
- external Tone.Master unmute();
- external Tone.Master receive(dynamic node);
- external Tone.Master send(dynamic node);
+ external Signal get volume;
+ external Master mute();
+ external Master unmute();
+ external Master receive(dynamic node);
+ external Master send(dynamic node);
 }
 
 @JS('Max')
 class Max{
- /*  extends Tone.Signal */
- external Tone.Max dispose();
+ /*  extends Signal */
+ external Max dispose();
 }
 
 @JS('Merge')
@@ -418,13 +420,13 @@ class Merge{
  /*  extends Tone */
  external GainNode get left;
  external GainNode get right;
- external Tone.Merge dispose();
+ external Merge dispose();
 }
 
 @JS('Meter')
 class Meter{
  /*  extends Tone */
- external Tone.Meter dispose();
+ external Meter dispose();
  external num getDb([num channel]);
  external num getLevel([num channel]);
  external num getValue([num channel]);
@@ -433,69 +435,69 @@ class Meter{
 
 @JS('Microphone')
 class Microphone{
- /*  extends Tone.Source */
- external Tone.Microphone dispose();
+ /*  extends Source */
+ external Microphone dispose();
 }
 
 @JS('MidSideEffect')
 class MidSideEffect{
- /*  extends Tone.StereoEffect */
+ /*  extends StereoEffect */
  external GainNode get midReturn;
- external Tone.Expr get midSend;
+ external Expr get midSend;
  external GainNode get sideReturn;
- external Tone.Expr get sideSend;
- external Tone.MidSideEffect dispose();
+ external Expr get sideSend;
+ external MidSideEffect dispose();
 }
 
 @JS('Min')
 class Min{
- /*  extends Tone.Signal */
- external Tone.Min dispose();
+ /*  extends Signal */
+ external Min dispose();
 }
 
 @JS('Modulo')
 class Modulo{
- /*  extends Tone.SignalBase */
+ /*  extends SignalBase */
  external num get value;
- external Tone.Modulo dispose();
+ external Modulo dispose();
 }
 
 @JS('Mono')
 class Mono{
  /*  extends Tone */
- external Tone.Mono dispose();
+ external Mono dispose();
 }
 
 @JS('Monophonic')
 class Monophonic{
- /*  extends Tone.Instrument */
- external Tone.Time get portamento;
- external Tone.Monophonic setNote(dynamic note);
+ /*  extends Instrument */
+ external Time get portamento;
+ external Monophonic setNote(dynamic note);
 }
 
 @JS('MonoSynth')
 class MonoSynth{
- /*  extends Tone.Monophonic */
- external Tone.Signal get detune;
- external Tone.Envelope get envelope;
- external Tone.Filter get filter;
- external Tone.Envelope get filterEnvelope;
- external Tone.Signal get frequency;
- external Tone.OmniOscillator get oscillator;
- external Tone.MonoSynth dispose();
- external Tone.MonoSynth triggerEnvelopeAttack([Tone.Time time, num velocity]);
- external Tone.MonoSynth triggerEnvelopeRelease([Tone.Time time]);
+ /*  extends Monophonic */
+ external Signal get detune;
+ external Envelope get envelope;
+ external Filter get filter;
+ external Envelope get filterEnvelope;
+ external Signal get frequency;
+ external OmniOscillator get oscillator;
+ external MonoSynth dispose();
+ external MonoSynth triggerEnvelopeAttack([Time time, num velocity]);
+ external MonoSynth triggerEnvelopeRelease([Time time]);
 }
 
 @JS('MultibandCompressor')
 class MultibandCompressor{
  /*  extends Tone */
- external Tone.Compressor get high;
- external Tone.Signal get highFrequency;
- external Tone.Compressor get low;
- external Tone.Signal get lowFrequency;
- external Tone.Compressor get mid;
- external Tone.MultibandCompressor dispose();
+ external Compressor get high;
+ external Signal get highFrequency;
+ external Compressor get low;
+ external Signal get lowFrequency;
+ external Compressor get mid;
+ external MultibandCompressor dispose();
 }
 
 @JS('MultibandEQ')
@@ -514,282 +516,282 @@ class MultibandEQ{
 @JS('MultibandSplit')
 class MultibandSplit{
  /*  extends Tone */
- external Tone.Filter get high;
- external Tone.Signal get highFrequency;
- external Tone.Filter get low;
- external Tone.Signal get lowFrequency;
- external Tone.Filter get mid;
- external Tone.MultibandSplit dispose();
+ external Filter get high;
+ external Signal get highFrequency;
+ external Filter get low;
+ external Signal get lowFrequency;
+ external Filter get mid;
+ external MultibandSplit dispose();
 }
 
 @JS('Multiply')
 class Multiply{
- /*  extends Tone.Signal */
- external Tone.Multiply dispose();
+ /*  extends Signal */
+ external Multiply dispose();
 }
 
 @JS('Negate')
 class Negate{
- /*  extends Tone.SignalBase */
- external Tone.Negate dispose();
+ /*  extends SignalBase */
+ external Negate dispose();
 }
 
 @JS('Noise')
 class Noise{
- /*  extends Tone.Source */
+ /*  extends Source */
  external String get type;
- external Tone.Noise dispose();
+ external Noise dispose();
 }
 
 @JS('NoiseSynth')
 class NoiseSynth{
- /*  extends Tone.Instrument */
- external Tone.Envelope get envelope;
- external Tone.Filter get filter;
- external Tone.Envelope get filterEnvelope;
- external Tone.Noise get noise;
- external Tone.NoiseSynth dispose();
- external Tone.NoiseSynth triggerAttack([Tone.Time time, num velocity]);
- external Tone.NoiseSynth triggerAttackRelease(Tone.Time duration, [Tone.Time time, num velocity]);
- external Tone.NoiseSynth triggerRelease([Tone.Time time]);
+ /*  extends Instrument */
+ external Envelope get envelope;
+ external Filter get filter;
+ external Envelope get filterEnvelope;
+ external Noise get noise;
+ external NoiseSynth dispose();
+ external NoiseSynth triggerAttack([Time time, num velocity]);
+ external NoiseSynth triggerAttackRelease(Time duration, [Time time, num velocity]);
+ external NoiseSynth triggerRelease([Time time]);
 }
 
 @JS('Normalize')
 class Normalize{
- /*  extends Tone.SignalBase */
+ /*  extends SignalBase */
  external num get max;
  external num get min;
- external Tone.Normalize dispose();
+ external Normalize dispose();
 }
 
 @JS('Note')
 class Note{
  external dynamic get value;
- external List<Tone.Note> parseScore(Object score);
+ external List<Note> parseScore(Object score);
  external void route(dynamic channel, [ dynamic callback(dynamic e)]);
  external void unroute(dynamic channel, [ dynamic callback(dynamic e)]);
- external Tone.Note dispose();
+ external Note dispose();
 }
 
 @JS('OmniOscillator')
 class OmniOscillator{
- /*  extends Tone.Source */
- external Tone.Signal get detune;
- external Tone.Signal get frequency;
- external Tone.Signal get modulationFrequency;
+ /*  extends Source */
+ external Signal get detune;
+ external Signal get frequency;
+ external Signal get modulationFrequency;
  external num get phase;
  external String get type;
- external Tone.Signal get width;
- external Tone.OmniOscillator dispose();
+ external Signal get width;
+ external OmniOscillator dispose();
 }
 
 @JS('OR')
 class OR{
- /*  extends Tone.SignalBase */
- external Tone.OR dispose();
+ /*  extends SignalBase */
+ external OR dispose();
 }
 
 @JS('Oscillator')
 class Oscillator{
- /*  extends Tone.Source */
- external Tone.Signal get detune;
- external Tone.Signal get frequency;
+ /*  extends Source */
+ external Signal get detune;
+ external Signal get frequency;
  external num get phase;
  external String get type;
- external Tone.Oscillator dispose();
- external Tone.Oscillator syncFrequency();
- external Tone.Oscillator unsyncFrequency();
+ external Oscillator dispose();
+ external Oscillator syncFrequency();
+ external Oscillator unsyncFrequency();
 }
 
 @JS('Panner')
 class Panner{
  /*  extends Tone */
- external Tone.Signal get pan;
- external Tone.Panner dispose();
+ external Signal get pan;
+ external Panner dispose();
 }
 
 @JS('PanVol')
 class PanVol{
  /*  extends Tone */
  external GainNode get output;
- external Tone.Signal get volume;
- external Tone.PanVol dispose();
+ external Signal get volume;
+ external PanVol dispose();
 }
 
 @JS('Phaser')
 class Phaser{
- /*  extends Tone.StereoEffect */
+ /*  extends StereoEffect */
  external num get baseFrequency;
  external num get depth;
- external Tone.Signal get frequency;
- external Tone.Phaser dispose();
+ external Signal get frequency;
+ external Phaser dispose();
 }
 
 @JS('PingPongDelay')
 class PingPongDelay{
- /*  extends Tone.StereoXFeedbackEffect */
- external Tone.Signal get delayTime;
- external Tone.PingPongDelay dispose();
+ /*  extends StereoXFeedbackEffect */
+ external Signal get delayTime;
+ external PingPongDelay dispose();
 }
 
 @JS('Player')
 class Player{
- /*  extends Tone.Source */
+ /*  extends Source */
  external AudioBuffer get buffer;
  external num get duration;
  external bool get loop;
- external Tone.Time get loopEnd;
- external Tone.Time get loopStart;
+ external Time get loopEnd;
+ external Time get loopStart;
  external num get playbackRate;
  external bool get retrigger;
- external Tone.Player dispose();
- external Tone.Player load(String url, [ dynamic callback(dynamic e)]);
- external Tone.Player setLoopPoints(Tone.Time loopStart, Tone.Time loopEnd);
+ external Player dispose();
+ external Player load(String url, [ dynamic callback(dynamic e)]);
+ external Player setLoopPoints(Time loopStart, Time loopEnd);
 }
 
 @JS('PluckSynth')
 class PluckSynth{
- /*  extends Tone.Instrument */
+ /*  extends Instrument */
  external num get attackNoise;
- external Tone.Signal get dampening;
- external Tone.Signal get resonance;
- external Tone.PluckSynth dispose();
- external Tone.PluckSynth triggerAttack(dynamic note, [Tone.Time time]);
+ external Signal get dampening;
+ external Signal get resonance;
+ external PluckSynth dispose();
+ external PluckSynth triggerAttack(dynamic note, [Time time]);
 }
 
 @JS('PolySynth')
 class PolySynth{
- /*  extends Tone.Instrument */
+ /*  extends Instrument */
  external List<dynamic> get voices;
- external Tone.PolySynth dispose();
+ external PolySynth dispose();
  external /*todo type MethodSignature*/ dynamic get([List<dynamic> params]);
  external /*todo type MethodSignature*/ dynamic set(Object params);
- external Tone.PolySynth setPreset(String presetName);
- external Tone.PolySynth triggerAttack(dynamic value, [Tone.Time time, num velocity]);
- external Tone.PolySynth triggerAttackRelease(dynamic value, Tone.Time duration, [Tone.Time time, num velocity]);
- external Tone.PolySynth triggerRelease(dynamic value, [Tone.Time time]);
+ external PolySynth setPreset(String presetName);
+ external PolySynth triggerAttack(dynamic value, [Time time, num velocity]);
+ external PolySynth triggerAttackRelease(dynamic value, Time duration, [Time time, num velocity]);
+ external PolySynth triggerRelease(dynamic value, [Time time]);
 }
 
 @JS('Pow')
 class Pow{
- /*  extends Tone.SignalBase */
+ /*  extends SignalBase */
  external num get value;
- external Tone.Pow dispose();
+ external Pow dispose();
 }
 
 @JS('PulseOscillator')
 class PulseOscillator{
- /*  extends Tone.Oscillator */
- external Tone.Signal get detune;
- external Tone.Signal get frequency;
+ /*  extends Oscillator */
+ external Signal get detune;
+ external Signal get frequency;
  external num get phase;
- external Tone.Signal get width;
- external Tone.PulseOscillator dispose();
+ external Signal get width;
+ external PulseOscillator dispose();
 }
 
 @JS('PWMOscillator')
 class PWMOscillator{
- /*  extends Tone.Oscillator */
- external Tone.Signal get detune;
- external Tone.Signal get frequency;
- external Tone.Signal get modulationFrequency;
+ /*  extends Oscillator */
+ external Signal get detune;
+ external Signal get frequency;
+ external Signal get modulationFrequency;
  external num get phase;
- external Tone.Signal get width;
- external Tone.PWMOscillator dispose();
+ external Signal get width;
+ external PWMOscillator dispose();
 }
 
 @JS('Route')
 class Route{
- /*  extends Tone.SignalBase */
- external Tone.Signal get gate;
- external Tone.Route dispose();
- external Tone.Route select([num which, Tone.Time time]);
+ /*  extends SignalBase */
+ external Signal get gate;
+ external Route dispose();
+ external Route select([num which, Time time]);
 }
 
 @JS('Sampler')
 class Sampler{
- /*  extends Tone.Instrument */
- external Tone.Envelope get envelope;
+ /*  extends Instrument */
+ external Envelope get envelope;
  external BiquadFilterNode get filter;
- external Tone.Envelope get filterEnvelope;
+ external Envelope get filterEnvelope;
  external num get pitch;
- external Tone.Player get player;
+ external Player get player;
  external dynamic get sample;
- external Tone.Sampler dispose();
- external Tone.Sampler triggerAttack([String sample, Tone.Time time, num velocity]);
- external Tone.Sampler triggerRelease([Tone.Time time]);
+ external Sampler dispose();
+ external Sampler triggerAttack([String sample, Time time, num velocity]);
+ external Sampler triggerRelease([Time time]);
 }
 
 @JS('Scale')
 class Scale{
- /*  extends Tone.SignalBase */
+ /*  extends SignalBase */
  external num get max;
  external num get min;
- external Tone.Scale dispose();
+ external Scale dispose();
 }
 
 @JS('ScaledEnvelope')
 class ScaledEnvelope{
- /*  extends Tone.Envelope */
+ /*  extends Envelope */
  external num get exponent;
  external num get max;
  external num get min;
- external Tone.ScaledEnvelope dispose();
+ external ScaledEnvelope dispose();
 }
 
 @JS('ScaleExp')
 class ScaleExp{
- /*  extends Tone.SignalBase */
+ /*  extends SignalBase */
  external num get exponent;
  external num get max;
  external num get min;
- external Tone.ScaleExp dispose();
+ external ScaleExp dispose();
 }
 
 @JS('Select')
 class Select{
- /*  extends Tone.SignalBase */
- external Tone.Signal get gate;
- external Tone.Select dispose();
- external Tone.Select select(num which, [Tone.Time time]);
+ /*  extends SignalBase */
+ external Signal get gate;
+ external Select dispose();
+ external Select select(num which, [Time time]);
 }
 
 @JS('Signal')
 class Signal{
- /*  extends Tone.SignalBase */
- external undefined.Type get units;
+ /*  extends SignalBase */
+ external Type get units;
  external dynamic get value;
- external Tone.Signal cancelScheduledValues(Tone.Time startTime);
- external Tone.Signal dispose();
- external Tone.Signal exponentialRampToValueAtTime(num value, Tone.Time endTime);
- external Tone.Signal exponentialRampToValueNow(num value, Tone.Time rampTime);
- external Tone.Signal linearRampToValueAtTime(num value, Tone.Time endTime);
- external Tone.Signal linearRampToValueNow(num value, Tone.Time rampTime);
- external Tone.Signal rampTo(num value, Tone.Time rampTime);
- external Tone.Signal setCurrentValueNow([num now]);
- external Tone.Signal setTargetAtTime(num value, Tone.Time startTime, num timeConstant);
- external Tone.Signal setValueAtTime(num value, Tone.Time time);
- external Tone.Signal setValueCurveAtTime(List<num> values, Tone.Time startTime, Tone.Time duration);
+ external Signal cancelScheduledValues(Time startTime);
+ external Signal dispose();
+ external Signal exponentialRampToValueAtTime(num value, Time endTime);
+ external Signal exponentialRampToValueNow(num value, Time rampTime);
+ external Signal linearRampToValueAtTime(num value, Time endTime);
+ external Signal linearRampToValueNow(num value, Time rampTime);
+ external Signal rampTo(num value, Time rampTime);
+ external Signal setCurrentValueNow([num now]);
+ external Signal setTargetAtTime(num value, Time startTime, num timeConstant);
+ external Signal setValueAtTime(num value, Time time);
+ external Signal setValueCurveAtTime(List<num> values, Time startTime, Time duration);
 }
 
 @JS('SignalBase')
 class SignalBase{
  /*  extends Tone */
- external Tone.SignalBase connect(dynamic node, [num outputNumber, num inputNumber]);
+ external SignalBase connect(dynamic node, [num outputNumber, num inputNumber]);
 }
 
 @JS('Source')
 class Source{
  /*  extends Tone */
  external String get State;
- external  dynamic onended(); get onended;
- external undefined.State get state;
- external Tone.Signal get volume;
- external Tone.Source dispose();
- external Tone.Source start([Tone.Time time]);
- external Tone.Source stop([Tone.Time time]);
- external Tone.Source sync([Tone.Time delay]);
- external Tone.Source unsync();
+ external  dynamic onended();
+ external dynamic get state;
+ external Signal get volume;
+ external Source dispose();
+ external Source start([Time time]);
+ external Source stop([Time time]);
+ external Source sync([Time delay]);
+ external Source unsync();
 }
 
 @JS('Split')
@@ -797,45 +799,45 @@ class Split{
  /*  extends Tone */
  external GainNode get left;
  external GainNode get right;
- external Tone.Split dispose();
+ external Split dispose();
 }
 
 @JS('StereoEffect')
 class StereoEffect{
- /*  extends Tone.Effect */
+ /*  extends Effect */
  external GainNode get effectReturnL;
  external GainNode get effectReturnR;
- external Tone.StereoEffect dispose();
+ external StereoEffect dispose();
 }
 
 @JS('StereoFeedbackEffect')
 class StereoFeedbackEffect{
- /*  extends Tone.FeedbackEffect */
- external Tone.Signal get feedback;
- external Tone.StereoFeedbackEffect dispose();
+ /*  extends FeedbackEffect */
+ external Signal get feedback;
+ external StereoFeedbackEffect dispose();
 }
 
 @JS('StereoWidener')
 class StereoWidener{
- /*  extends Tone.MidSideEffect */
- external Tone.Signal get width;
- external Tone.StereoWidener dispose();
+ /*  extends MidSideEffect */
+ external Signal get width;
+ external StereoWidener dispose();
 }
 
 @JS('StereoXFeedbackEffect')
 class StereoXFeedbackEffect{
- /*  extends Tone.FeedbackEffect */
- external Tone.Signal get feedback;
- external Tone.StereoXFeedbackEffect dispose();
+ /*  extends FeedbackEffect */
+ external Signal get feedback;
+ external StereoXFeedbackEffect dispose();
 }
 
 @JS('Switch')
 class Switch{
- /*  extends Tone.SignalBase */
- external Tone.Signal get gate;
- external Tone.Switch close(Tone.Time time);
- external Tone.Switch dispose();
- external Tone.Switch open(Tone.Time time);
+ /*  extends SignalBase */
+ external Signal get gate;
+ external Switch close(Time time);
+ external Switch dispose();
+ external Switch open(Time time);
 }
 
 @JS('Time')
@@ -845,14 +847,14 @@ class Time{
 @JS('Transport')
 class Transport{
  /*  extends Tone */
- external Tone.Signal get bpm;
+ external Signal get bpm;
  external bool get loop;
- external Tone.Time get loopEnd;
- external Tone.Time get loopStart;
+ external Time get loopEnd;
+ external Time get loopStart;
  external String get position;
  external TransportState get state;
  external num get swing;
- external Tone.Time get swingSubdivision;
+ external Time get swingSubdivision;
  external num get timeSignature;
  external bool clearInterval(num rmInterval);
  external void clearIntervals();
@@ -860,19 +862,19 @@ class Transport{
  external void clearTimelines();
  external bool clearTimeout(num timeoutID);
  external void clearTimeouts();
- external Tone.Transport dispose();
+ external Transport dispose();
  external num nextBeat([String subdivision]);
- external Tone.Transport pause(Tone.Time time);
- external num setInterval( dynamic callback(dynamic e), Tone.Time interval);
- external Tone.Transport setLoopPoints(Tone.Time startPosition, Tone.Time endPosition);
- external num setTimeline( dynamic callback(dynamic e), Tone.Time timeout);
- external num setTimeout( dynamic callback(dynamic e), Tone.Time time);
- external Tone.Transport start(Tone.Time time, [Tone.Time offset]);
- external Tone.Transport stop(Tone.Time time);
- external Tone.Transport syncSignal(Tone.Signal signal, [num ratio]);
- external Tone.Transport syncSource(Tone.Source source, Tone.Time delay);
- external Tone.Transport unsyncSignal(Tone.Signal signal);
- external Tone.Transport unsyncSource(Tone.Source source);
+ external Transport pause(Time time);
+ external num setInterval( dynamic callback(dynamic e), Time interval);
+ external Transport setLoopPoints(Time startPosition, Time endPosition);
+ external num setTimeline( dynamic callback(dynamic e), Time timeout);
+ external num setTimeout( dynamic callback(dynamic e), Time time);
+ external Transport start(Time time, [Time offset]);
+ external Transport stop(Time time);
+ external Transport syncSignal(Signal signal, [num ratio]);
+ external Transport syncSource(Source source, Time delay);
+ external Transport unsyncSignal(Signal signal);
+ external Transport unsyncSource(Source source);
 }
 
 @JS('TransportState')
@@ -881,7 +883,7 @@ class TransportState{
 
 @JS('WaveShaper')
 class WaveShaper{
- /*  extends Tone.SignalBase */
+ /*  extends SignalBase */
  external List<num> get curve;
  external String get oversample;
 }

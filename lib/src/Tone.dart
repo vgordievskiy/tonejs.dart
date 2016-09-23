@@ -1,4 +1,3 @@
-@JS('Tone')
 library Tone;
 
 import "package:js/js.dart";

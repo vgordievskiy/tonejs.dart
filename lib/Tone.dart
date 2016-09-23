@@ -1,10 +1,12 @@
+@JS('Tone')
+library Tone;
 import 'dart:web_audio';
 import "package:js/js.dart";
-import "src/Tone.dart";
-import "src/Signal.dart";
 import "src/Source.dart";
 
-@JS('Tone')
+export "src/Source.dart";
+
+@JS('')
 class Tone{
  external AudioContext get context;
  external GainNode get input;
@@ -41,12 +43,12 @@ class Tone{
  external num samplesToSeconds(num samples);
  external num secondsToFrequency(num seconds);
  external Tone send(String channelName, [num amount]);
- external Tone set(dynamic params, [num value, Tone.Time rampTime]);
+ external Tone set(dynamic params, [num value, Time rampTime]);
  external void setContext(AudioContext ctx);
  external Tone setPreset(String presetName);
  external void startMobile();
- external num toFrequency(Tone.Frequency note, [num now]);
+ external num toFrequency(Frequency note, [num now]);
  external Tone toMaster();
- external num toSamples(Tone.Time time);
+ external num toSamples(Time time);
  external num toSeconds([num time, num now]);
 }
