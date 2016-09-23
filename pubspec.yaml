@@ -1,14 +1,13 @@
 name: tonejs
 description: A starting point for Dart libraries or applications.
 version: 0.0.1
-#author: Vladislav Gordievskiy <email@example.com>
-#homepage: https://www.example.com
+author: Vladislav Gordievskiy
 
 environment:
   sdk: '>=1.0.0 <2.0.0'
 
-#dependencies:
-#  lib_name: any
-
-dev_dependencies:
-  test: '>=0.12.0 <0.13.0'
+dependencies:
+  func: ^0.1.0
+  js: ^0.6.0
+  args: any
+  path: any
