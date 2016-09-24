@@ -3,6 +3,7 @@ library Tone.impl;
 
 import 'dart:web_audio';
 import "package:js/js.dart";
+import 'Params.dart';
 
 @JS('Tone')
 class Tone{
