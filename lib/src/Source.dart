@@ -42,13 +42,13 @@ class Tone{
  external num samplesToSeconds(num samples);
  external num secondsToFrequency(num seconds);
  external Tone send(String channelName, [num amount]);
- external Tone set(dynamic params, [num value, Time rampTime]);
+ external Tone set(dynamic params, [num value, dynamic rampTime]);
  external void setContext(AudioContext ctx);
  external Tone setPreset(String presetName);
  external void startMobile();
  external num toFrequency(Frequency note, [num now]);
  external Tone toMaster();
- external num toSamples(Time time);
+ external num toSamples(dynamic time);
  external num toSeconds([num time, num now]);
 }
 
@@ -82,8 +82,8 @@ class AMSynth extends Monophonic {
  external num get harmonicity;
  external MonoSynth get modulator;
  external AMSynth dispose();
- external AMSynth triggerEnvelopeAttack([Time time, num velocity]);
- external AMSynth triggerEnvelopeRelease([Time time]);
+ external AMSynth triggerEnvelopeAttack([dynamic time, num velocity]);
+ external AMSynth triggerEnvelopeRelease([dynamic time]);
 }
 
 @JS('AND')
@@ -108,8 +108,8 @@ class AutoPanner extends Effect {
  external Signal get frequency;
  external String get type;
  external AutoPanner dispose();
- external AutoPanner start([Time Time]);
- external AutoPanner stop([Time Time]);
+ external AutoPanner start([dynamic Time]);
+ external AutoPanner stop([dynamic Time]);
  external AutoPanner sync();
  external AutoPanner unsync();
 }
@@ -231,8 +231,8 @@ class DuoSynth extends Monophonic {
  external Signal get vibratoRate;
  external MonoSynth get voice0;
  external MonoSynth get voice1;
- external DuoSynth triggerEnvelopeAttack([Time time, num velocity]);
- external DuoSynth triggerEnvelopeRelease([Time time]);
+ external DuoSynth triggerEnvelopeAttack([dynamic time, num velocity]);
+ external DuoSynth triggerEnvelopeRelease([dynamic time]);
 }
 
 @JS('Effect')
@@ -248,14 +248,14 @@ class Effect extends Tone {
 class Envelope extends Tone {
  /*  extends Tone */
  external factory Envelope();
- external Time get attack;
- external Time get decay;
- external Time get release;
+ external dynamic get attack;
+ external dynamic get decay;
+ external dynamic get release;
  external num get sustain;
  external Envelope dispose();
- external Envelope triggerAttack([Time time, num velocity]);
- external Envelope triggerAttackRelease(Time duration, [Time time, num velocity]);
- external Envelope triggerRelease([Time time]);
+ external Envelope triggerAttack([dynamic time, num velocity]);
+ external Envelope triggerAttackRelease(dynamic duration, [dynamic time, num velocity]);
+ external Envelope triggerRelease([dynamic time]);
 }
 
 @JS('EQ3')
@@ -305,7 +305,7 @@ class Expr extends SignalBase {
 class FeedbackCombFilter extends Tone {
  /*  extends Tone */
  external factory FeedbackCombFilter();
- external Time get delayTime;
+ external dynamic get delayTime;
  external Signal get resonance;
  external FeedbackCombFilter dispose();
 }
@@ -349,16 +349,16 @@ class FMSynth extends Monophonic {
  external num get modulationIndex;
  external MonoSynth get modulator;
  external FMSynth dispose();
- external FMSynth triggerEnvelopeAttack([Time time, num velocity]);
- external FMSynth triggerEnvelopeRelease([Time time]);
+ external FMSynth triggerEnvelopeAttack([dynamic time, num velocity]);
+ external FMSynth triggerEnvelopeRelease([dynamic time]);
 }
 
 @JS('Follower')
 class Follower extends Tone {
  /*  extends Tone */
  external factory Follower();
- external Time get attack;
- external Time get release;
+ external dynamic get attack;
+ external dynamic get release;
  external Follower dispose();
 }
 
@@ -374,10 +374,10 @@ class Freeverb extends Effect {
 @JS('TimeBase')
 class TimeBase{
  external TimeBase set(String exprString);
- external TimeBase add(Time val, [String units]);
- external TimeBase sub(Time val, [String units]);
- external TimeBase mult(Time val, [String units]);
- external TimeBase div(Time val, [String units]);
+ external TimeBase add(dynamic val, [String units]);
+ external TimeBase sub(dynamic val, [String units]);
+ external TimeBase mult(dynamic val, [String units]);
+ external TimeBase div(dynamic val, [String units]);
  external num eval();
 }
 
@@ -400,9 +400,9 @@ class Frequency extends TimeBase {
 class Gate extends Tone {
  /*  extends Tone */
  external factory Gate();
- external Time get attack;
- external Time get release;
- external Time get threshold;
+ external dynamic get attack;
+ external dynamic get release;
+ external dynamic get threshold;
  external Gate dispose();
 }
 
@@ -432,9 +432,9 @@ class Instrument extends Tone {
  /*  extends Tone */
  external factory Instrument();
  external Signal get volume;
- external Instrument triggerAttack(dynamic note, [Time time, num velocity]);
- external Instrument triggerAttackRelease(dynamic note, Time duration, [Time time, num velocity]);
- external Instrument triggerRelease([Time time]);
+ external Instrument triggerAttack(dynamic note, [dynamic time, num velocity]);
+ external Instrument triggerAttackRelease(dynamic note, dynamic duration, [dynamic time, num velocity]);
+ external Instrument triggerRelease([dynamic time]);
  external Instrument dispose();
 }
 
@@ -465,9 +465,9 @@ class LFO extends Oscillator {
  external num get phase;
  external String get type;
  external LFO dispose();
- external LFO start([Time time]);
- external LFO stop([Time time]);
- external LFO sync([Time delay]);
+ external LFO start([dynamic time]);
+ external LFO stop([dynamic time]);
+ external LFO sync([dynamic delay]);
  external LFO unsync();
 }
 
@@ -483,10 +483,10 @@ class LowpassCombFilter extends Tone {
  /*  extends Tone */
  external factory LowpassCombFilter();
  external Signal get dampening;
- external Time get delayTime;
+ external dynamic get delayTime;
  external Signal get resonance;
  external LowpassCombFilter dispose();
- external LowpassCombFilter setDelayTimeAtTime(Time delayAmount, [Time time]);
+ external LowpassCombFilter setDelayTimeAtTime(dynamic delayAmount, [dynamic time]);
 }
 
 @JS('Master')
@@ -571,7 +571,7 @@ class Mono extends Tone {
 class Monophonic extends Instrument {
  /*  extends Instrument */
  external factory Monophonic();
- external Time get portamento;
+ external dynamic get portamento;
  external Monophonic setNote(dynamic note);
 }
 
@@ -586,8 +586,8 @@ class MonoSynth extends Monophonic {
  external Signal get frequency;
  external OmniOscillator get oscillator;
  external MonoSynth dispose();
- external MonoSynth triggerEnvelopeAttack([Time time, num velocity]);
- external MonoSynth triggerEnvelopeRelease([Time time]);
+ external MonoSynth triggerEnvelopeAttack([dynamic time, num velocity]);
+ external MonoSynth triggerEnvelopeRelease([dynamic time]);
 }
 
 @JS('MultibandCompressor')
@@ -659,9 +659,9 @@ class NoiseSynth extends Instrument {
  external Envelope get filterEnvelope;
  external Noise get noise;
  external NoiseSynth dispose();
- external NoiseSynth triggerAttack([Time time, num velocity]);
- external NoiseSynth triggerAttackRelease(Time duration, [Time time, num velocity]);
- external NoiseSynth triggerRelease([Time time]);
+ external NoiseSynth triggerAttack([dynamic time, num velocity]);
+ external NoiseSynth triggerAttackRelease(dynamic duration, [dynamic time, num velocity]);
+ external NoiseSynth triggerRelease([dynamic time]);
 }
 
 @JS('Normalize')
@@ -757,13 +757,13 @@ class Player extends Source {
  external AudioBuffer get buffer;
  external num get duration;
  external bool get loop;
- external Time get loopEnd;
- external Time get loopStart;
+ external dynamic get loopEnd;
+ external dynamic get loopStart;
  external num get playbackRate;
  external bool get retrigger;
  external Player dispose();
  external Player load(String url, [ dynamic callback(dynamic e)]);
- external Player setLoopPoints(Time loopStart, Time loopEnd);
+ external Player setLoopPoints(dynamic loopStart, dynamic loopEnd);
 }
 
 @JS('PluckSynth')
@@ -774,7 +774,7 @@ class PluckSynth extends Instrument {
  external Signal get dampening;
  external Signal get resonance;
  external PluckSynth dispose();
- external PluckSynth triggerAttack(dynamic note, [Time time]);
+ external PluckSynth triggerAttack(dynamic note, [dynamic time]);
 }
 
 @JS('PolySynth')
@@ -786,9 +786,9 @@ class PolySynth extends Instrument {
  external /*todo type MethodSignature*/ dynamic get([List<dynamic> params]);
  external /*todo type MethodSignature*/ dynamic set(Object params);
  external PolySynth setPreset(String presetName);
- external PolySynth triggerAttack(dynamic value, [Time time, num velocity]);
- external PolySynth triggerAttackRelease(dynamic value, Time duration, [Time time, num velocity]);
- external PolySynth triggerRelease(dynamic value, [Time time]);
+ external PolySynth triggerAttack(dynamic value, [dynamic time, num velocity]);
+ external PolySynth triggerAttackRelease(dynamic value, dynamic duration, [dynamic time, num velocity]);
+ external PolySynth triggerRelease(dynamic value, [dynamic time]);
 }
 
 @JS('Pow')
@@ -828,7 +828,7 @@ class Route extends SignalBase {
  external factory Route();
  external Signal get gate;
  external Route dispose();
- external Route select([num which, Time time]);
+ external Route select([num which, dynamic time]);
 }
 
 @JS('Sampler')
@@ -842,8 +842,8 @@ class Sampler extends Instrument {
  external Player get player;
  external dynamic get sample;
  external Sampler dispose();
- external Sampler triggerAttack([String sample, Time time, num velocity]);
- external Sampler triggerRelease([Time time]);
+ external Sampler triggerAttack([String sample, dynamic time, num velocity]);
+ external Sampler triggerRelease([dynamic time]);
 }
 
 @JS('Scale')
@@ -881,7 +881,7 @@ class Select extends SignalBase {
  external factory Select();
  external Signal get gate;
  external Select dispose();
- external Select select(num which, [Time time]);
+ external Select select(num which, [dynamic time]);
 }
 
 @JS('Signal')
@@ -890,17 +890,17 @@ class Signal extends SignalBase {
  external factory Signal();
  external Type get units;
  external dynamic get value;
- external Signal cancelScheduledValues(Time startTime);
+ external Signal cancelScheduledValues(dynamic startTime);
  external Signal dispose();
- external Signal exponentialRampToValueAtTime(num value, Time endTime);
- external Signal exponentialRampToValueNow(num value, Time rampTime);
- external Signal linearRampToValueAtTime(num value, Time endTime);
- external Signal linearRampToValueNow(num value, Time rampTime);
- external Signal rampTo(num value, Time rampTime);
+ external Signal exponentialRampToValueAtTime(num value, dynamic endTime);
+ external Signal exponentialRampToValueNow(num value, dynamic rampTime);
+ external Signal linearRampToValueAtTime(num value, dynamic endTime);
+ external Signal linearRampToValueNow(num value, dynamic rampTime);
+ external Signal rampTo(num value, dynamic rampTime);
  external Signal setCurrentValueNow([num now]);
- external Signal setTargetAtTime(num value, Time startTime, num timeConstant);
- external Signal setValueAtTime(num value, Time time);
- external Signal setValueCurveAtTime(List<num> values, Time startTime, Time duration);
+ external Signal setTargetAtTime(num value, dynamic startTime, num timeConstant);
+ external Signal setValueAtTime(num value, dynamic time);
+ external Signal setValueCurveAtTime(List<num> values, dynamic startTime, dynamic duration);
 }
 
 @JS('SignalBase')
@@ -919,9 +919,9 @@ class Source extends Tone {
  external dynamic get state;
  external Signal get volume;
  external Source dispose();
- external Source start([Time time]);
- external Source stop([Time time]);
- external Source sync([Time delay]);
+ external Source start([dynamic time]);
+ external Source stop([dynamic time]);
+ external Source sync([dynamic delay]);
  external Source unsync();
 }
 
@@ -972,13 +972,9 @@ class Switch extends SignalBase {
  /*  extends SignalBase */
  external factory Switch();
  external Signal get gate;
- external Switch close(Time time);
+ external Switch close(dynamic time);
  external Switch dispose();
- external Switch open(Time time);
-}
-
-@JS('Time')
-class Time{
+ external Switch open(dynamic time);
 }
 
 @JS('Transport')
@@ -987,12 +983,12 @@ class Transport extends Tone {
  external factory Transport();
  external Signal get bpm;
  external bool get loop;
- external Time get loopEnd;
- external Time get loopStart;
+ external dynamic get loopEnd;
+ external dynamic get loopStart;
  external String get position;
  external TransportState get state;
  external num get swing;
- external Time get swingSubdivision;
+ external dynamic get swingSubdivision;
  external num get timeSignature;
  external bool clearInterval(num rmInterval);
  external void clearIntervals();
@@ -1002,15 +998,15 @@ class Transport extends Tone {
  external void clearTimeouts();
  external Transport dispose();
  external num nextBeat([String subdivision]);
- external Transport pause(Time time);
- external num setInterval( dynamic callback(dynamic e), Time interval);
- external Transport setLoopPoints(Time startPosition, Time endPosition);
- external num setTimeline( dynamic callback(dynamic e), Time timeout);
- external num setTimeout( dynamic callback(dynamic e), Time time);
- external Transport start(Time time, [Time offset]);
- external Transport stop(Time time);
+ external Transport pause(dynamic time);
+ external num setInterval( dynamic callback(dynamic e), dynamic interval);
+ external Transport setLoopPoints(dynamic startPosition, dynamic endPosition);
+ external num setTimeline( dynamic callback(dynamic e), dynamic timeout);
+ external num setTimeout( dynamic callback(dynamic e), dynamic time);
+ external Transport start(dynamic time, [dynamic offset]);
+ external Transport stop(dynamic time);
  external Transport syncSignal(Signal signal, [num ratio]);
- external Transport syncSource(Source source, Time delay);
+ external Transport syncSource(Source source, dynamic delay);
  external Transport unsyncSignal(Signal signal);
  external Transport unsyncSource(Source source);
 }
