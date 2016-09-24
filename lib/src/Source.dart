@@ -52,26 +52,30 @@ class Tone{
 }
 
 @JS('Abs')
-class Abs{
+class Abs extends SignalBase {
  /*  extends SignalBase */
+ external factory Abs();
  external Abs dispose();
 }
 
 @JS('Add')
-class Add{
+class Add extends Signal {
  /*  extends Signal */
+ external factory Add();
  external Add dispose();
 }
 
 @JS('AmplitudeEnvelope')
-class AmplitudeEnvelope{
+class AmplitudeEnvelope extends Envelope {
  /*  extends Envelope */
+ external factory AmplitudeEnvelope();
  external AmplitudeEnvelope dispose();
 }
 
 @JS('AMSynth')
-class AMSynth{
+class AMSynth extends Monophonic {
  /*  extends Monophonic */
+ external factory AMSynth();
  external MonoSynth get carrier;
  external Signal get frequency;
  external num get harmonicity;
@@ -89,14 +93,16 @@ class AND extends SignalBase {
 }
 
 @JS('AudioToGain')
-class AudioToGain{
+class AudioToGain extends SignalBase {
  /*  extends SignalBase */
+ external factory AudioToGain();
  external AudioToGain dispose();
 }
 
 @JS('AutoPanner')
-class AutoPanner{
+class AutoPanner extends Effect {
  /*  extends Effect */
+ external factory AutoPanner();
  external Signal get amount;
  external Signal get frequency;
  external String get type;
@@ -108,8 +114,9 @@ class AutoPanner{
 }
 
 @JS('AutoWah')
-class AutoWah{
+class AutoWah extends Effect {
  /*  extends Effect */
+ external factory AutoWah();
  external Frequency get baseFrequency;
  external Signal get gain;
  external num get octaves;
@@ -119,15 +126,17 @@ class AutoWah{
 }
 
 @JS('BitCrusher')
-class BitCrusher{
+class BitCrusher extends Effect {
  /*  extends Effect */
+ external factory BitCrusher();
  external num get bits;
  external BitCrusher dispose();
 }
 
 @JS('Buffer')
-class Buffer{
+class Buffer extends Tone {
  /*  extends Tone */
+ external factory Buffer();
  external num get MAX_SIMULTANEOUS_DOWNLOADS;
  external num get duration;
  external bool get loaded;
@@ -143,16 +152,18 @@ class Buffer{
 }
 
 @JS('Chebyshev')
-class Chebyshev{
+class Chebyshev extends Effect {
  /*  extends Effect */
+ external factory Chebyshev();
  external num get order;
  external String get oversample;
  external Chebyshev dispose();
 }
 
 @JS('Chorus')
-class Chorus{
+class Chorus extends StereoXFeedbackEffect {
  /*  extends StereoXFeedbackEffect */
+ external factory Chorus();
  external num get delayTime;
  external num get depth;
  external Signal get frequency;
@@ -161,16 +172,18 @@ class Chorus{
 }
 
 @JS('Clip')
-class Clip{
+class Clip extends SignalBase {
  /*  extends SignalBase */
+ external factory Clip();
  external Signal get max;
  external Signal get min;
  external Clip dispose();
 }
 
 @JS('Compressor')
-class Compressor{
+class Compressor extends Tone {
  /*  extends Tone */
+ external factory Compressor();
  external Signal get attack;
  external AudioParam get knee;
  external AudioParam get ratio;
@@ -180,16 +193,18 @@ class Compressor{
 }
 
 @JS('Convolver')
-class Convolver{
+class Convolver extends Effect {
  /*  extends Effect */
+ external factory Convolver();
  external AudioBuffer get buffer;
  external Convolver load(String url, [ dynamic callback(dynamic e)]);
  external Convolver dispose();
 }
 
 @JS('CrossFade')
-class CrossFade{
+class CrossFade extends Tone {
  /*  extends Tone */
+ external factory CrossFade();
  external GainNode get a;
  external GainNode get b;
  external Signal get fade;
@@ -197,16 +212,18 @@ class CrossFade{
 }
 
 @JS('Distortion')
-class Distortion{
+class Distortion extends Effect {
  /*  extends Effect */
+ external factory Distortion();
  external num get distortion;
  external String get oversample;
  external Distortion dispose();
 }
 
 @JS('DuoSynth')
-class DuoSynth{
+class DuoSynth extends Monophonic {
  /*  extends Monophonic */
+ external factory DuoSynth();
  external Signal get frequency;
  external num get harmonicity;
  external Signal get vibratoAmount;
@@ -218,16 +235,18 @@ class DuoSynth{
 }
 
 @JS('Effect')
-class Effect{
+class Effect extends Tone {
  /*  extends Tone */
+ external factory Effect();
  external Signal get wet;
  external Effect bypass();
  external Effect dispose();
 }
 
 @JS('Envelope')
-class Envelope{
+class Envelope extends Tone {
  /*  extends Tone */
+ external factory Envelope();
  external Time get attack;
  external Time get decay;
  external Time get release;
@@ -239,8 +258,9 @@ class Envelope{
 }
 
 @JS('EQ3')
-class EQ3{
+class EQ3 extends Tone {
  /*  extends Tone */
+ external factory EQ3();
  external Signal get highFrequency;
  external GainNode get high;
  external Signal get lowFrequency;
@@ -250,57 +270,65 @@ class EQ3{
 }
 
 @JS('Equal')
-class Equal{
+class Equal extends SignalBase {
  /*  extends SignalBase */
+ external factory Equal();
  external num get value;
  external Equal dispose();
 }
 
 @JS('EqualPowerGain')
-class EqualPowerGain{
+class EqualPowerGain extends SignalBase {
  /*  extends SignalBase */
+ external factory EqualPowerGain();
  external EqualPowerGain dispose();
 }
 
 @JS('EqualZero')
-class EqualZero{
+class EqualZero extends SignalBase {
  /*  extends SignalBase */
+ external factory EqualZero();
  external EqualZero dispose();
 }
 
 @JS('Expr')
-class Expr{
+class Expr extends SignalBase {
  /*  extends SignalBase */
+ external factory Expr();
  external dynamic get input;
  external dynamic get output;
  external Expr dispose();
 }
 
 @JS('FeedbackCombFilter')
-class FeedbackCombFilter{
+class FeedbackCombFilter extends Tone {
  /*  extends Tone */
+ external factory FeedbackCombFilter();
  external Time get delayTime;
  external Signal get resonance;
  external FeedbackCombFilter dispose();
 }
 
 @JS('FeedbackDelay')
-class FeedbackDelay{
+class FeedbackDelay extends FeedbackEffect {
  /*  extends FeedbackEffect */
+ external factory FeedbackDelay();
  external Signal get delayTime;
  external FeedbackDelay dispose();
 }
 
 @JS('FeedbackEffect')
-class FeedbackEffect{
+class FeedbackEffect extends Effect {
  /*  extends Effect */
+ external factory FeedbackEffect();
  external Signal get feedback;
  external FeedbackEffect dispose();
 }
 
 @JS('Filter')
-class Filter{
+class Filter extends Tone {
  /*  extends Tone */
+ external factory Filter();
  external Signal get detune;
  external Signal get frequency;
  external AudioParam get gain;
@@ -311,8 +339,9 @@ class Filter{
 }
 
 @JS('FMSynth')
-class FMSynth{
+class FMSynth extends Monophonic {
  /*  extends Monophonic */
+ external factory FMSynth();
  external MonoSynth get carrier;
  external Signal get frequency;
  external num get harmonicity;
@@ -324,16 +353,18 @@ class FMSynth{
 }
 
 @JS('Follower')
-class Follower{
+class Follower extends Tone {
  /*  extends Tone */
+ external factory Follower();
  external Time get attack;
  external Time get release;
  external Follower dispose();
 }
 
 @JS('Freeverb')
-class Freeverb{
+class Freeverb extends Effect {
  /*  extends Effect */
+ external factory Freeverb();
  external Signal get dampening;
  external Signal get roomSize;
  external Freeverb dispose();
@@ -350,9 +381,10 @@ class TimeBase{
 }
 
 @JS('Frequency')
-class Frequency{
+class Frequency extends TimeBase {
  /*  extends TimeBase */
 /*todo Constructor*/
+ external factory Frequency();
  external num toMidi();
  external String toNote();
  external Frequency transpose(num interval);
@@ -364,8 +396,9 @@ class Frequency{
 }
 
 @JS('Gate')
-class Gate{
+class Gate extends Tone {
  /*  extends Tone */
+ external factory Gate();
  external Time get attack;
  external Time get release;
  external Time get threshold;
@@ -373,26 +406,30 @@ class Gate{
 }
 
 @JS('GreaterThan')
-class GreaterThan{
+class GreaterThan extends Signal {
  /*  extends Signal */
+ external factory GreaterThan();
  external GreaterThan dispose();
 }
 
 @JS('GreaterThanZero')
-class GreaterThanZero{
+class GreaterThanZero extends SignalBase {
  /*  extends SignalBase */
+ external factory GreaterThanZero();
  external GreaterThanZero dispose();
 }
 
 @JS('IfThenElse')
-class IfThenElse{
+class IfThenElse extends SignalBase {
  /*  extends SignalBase */
+ external factory IfThenElse();
  external IfThenElse dispose();
 }
 
 @JS('Instrument')
-class Instrument{
+class Instrument extends Tone {
  /*  extends Tone */
+ external factory Instrument();
  external Signal get volume;
  external Instrument triggerAttack(dynamic note, [Time time, num velocity]);
  external Instrument triggerAttackRelease(dynamic note, Time duration, [Time time, num velocity]);
@@ -401,21 +438,24 @@ class Instrument{
 }
 
 @JS('JCReverb')
-class JCReverb{
+class JCReverb extends Effect {
  /*  extends Effect */
+ external factory JCReverb();
  external Signal get roomSize;
  external JCReverb dispose();
 }
 
 @JS('LessThan')
-class LessThan{
+class LessThan extends Signal {
  /*  extends Signal */
+ external factory LessThan();
  external LessThan dispose();
 }
 
 @JS('LFO')
-class LFO{
+class LFO extends Oscillator {
  /*  extends Oscillator */
+ external factory LFO();
  external Signal get amplitude;
  external Signal get frequency;
  external num get max;
@@ -431,14 +471,16 @@ class LFO{
 }
 
 @JS('Limiter')
-class Limiter{
+class Limiter extends Tone {
  /*  extends Tone */
+ external factory Limiter();
  external Limiter dispose();
 }
 
 @JS('LowpassCombFilter')
-class LowpassCombFilter{
+class LowpassCombFilter extends Tone {
  /*  extends Tone */
+ external factory LowpassCombFilter();
  external Signal get dampening;
  external Time get delayTime;
  external Signal get resonance;
@@ -447,8 +489,9 @@ class LowpassCombFilter{
 }
 
 @JS('Master')
-class Master{
+class Master extends Tone {
  /*  extends Tone */
+ external factory Master();
  external Signal get volume;
  external Master mute();
  external Master unmute();
@@ -457,22 +500,25 @@ class Master{
 }
 
 @JS('Max')
-class Max{
+class Max extends Signal {
  /*  extends Signal */
+ external factory Max();
  external Max dispose();
 }
 
 @JS('Merge')
-class Merge{
+class Merge extends Tone {
  /*  extends Tone */
+ external factory Merge();
  external GainNode get left;
  external GainNode get right;
  external Merge dispose();
 }
 
 @JS('Meter')
-class Meter{
+class Meter extends Tone {
  /*  extends Tone */
+ external factory Meter();
  external Meter dispose();
  external num getDb([num channel]);
  external num getLevel([num channel]);
@@ -481,14 +527,16 @@ class Meter{
 }
 
 @JS('Microphone')
-class Microphone{
+class Microphone extends Source {
  /*  extends Source */
+ external factory Microphone();
  external Microphone dispose();
 }
 
 @JS('MidSideEffect')
-class MidSideEffect{
+class MidSideEffect extends StereoEffect {
  /*  extends StereoEffect */
+ external factory MidSideEffect();
  external GainNode get midReturn;
  external Expr get midSend;
  external GainNode get sideReturn;
@@ -497,34 +545,39 @@ class MidSideEffect{
 }
 
 @JS('Min')
-class Min{
+class Min extends Signal {
  /*  extends Signal */
+ external factory Min();
  external Min dispose();
 }
 
 @JS('Modulo')
-class Modulo{
+class Modulo extends SignalBase {
  /*  extends SignalBase */
+ external factory Modulo();
  external num get value;
  external Modulo dispose();
 }
 
 @JS('Mono')
-class Mono{
+class Mono extends Tone {
  /*  extends Tone */
+ external factory Mono();
  external Mono dispose();
 }
 
 @JS('Monophonic')
-class Monophonic{
+class Monophonic extends Instrument {
  /*  extends Instrument */
+ external factory Monophonic();
  external Time get portamento;
  external Monophonic setNote(dynamic note);
 }
 
 @JS('MonoSynth')
-class MonoSynth{
+class MonoSynth extends Monophonic {
  /*  extends Monophonic */
+ external factory MonoSynth();
  external Signal get detune;
  external Envelope get envelope;
  external Filter get filter;
@@ -537,8 +590,9 @@ class MonoSynth{
 }
 
 @JS('MultibandCompressor')
-class MultibandCompressor{
+class MultibandCompressor extends Tone {
  /*  extends Tone */
+ external factory MultibandCompressor();
  external Compressor get high;
  external Signal get highFrequency;
  external Compressor get low;
@@ -548,8 +602,9 @@ class MultibandCompressor{
 }
 
 @JS('MultibandEQ')
-class MultibandEQ{
+class MultibandEQ extends Tone {
  /*  extends Tone */
+ external factory MultibandEQ();
  external void setType(String type, num band);
  external String getType(num band);
  external void setFrequency(num freq, num band);
@@ -561,8 +616,9 @@ class MultibandEQ{
 }
 
 @JS('MultibandSplit')
-class MultibandSplit{
+class MultibandSplit extends Tone {
  /*  extends Tone */
+ external factory MultibandSplit();
  external Filter get high;
  external Signal get highFrequency;
  external Filter get low;
@@ -572,27 +628,31 @@ class MultibandSplit{
 }
 
 @JS('Multiply')
-class Multiply{
+class Multiply extends Signal {
  /*  extends Signal */
+ external factory Multiply();
  external Multiply dispose();
 }
 
 @JS('Negate')
-class Negate{
+class Negate extends SignalBase {
  /*  extends SignalBase */
+ external factory Negate();
  external Negate dispose();
 }
 
 @JS('Noise')
-class Noise{
+class Noise extends Source {
  /*  extends Source */
+ external factory Noise();
  external String get type;
  external Noise dispose();
 }
 
 @JS('NoiseSynth')
-class NoiseSynth{
+class NoiseSynth extends Instrument {
  /*  extends Instrument */
+ external factory NoiseSynth();
  external Envelope get envelope;
  external Filter get filter;
  external Envelope get filterEnvelope;
@@ -604,8 +664,9 @@ class NoiseSynth{
 }
 
 @JS('Normalize')
-class Normalize{
+class Normalize extends SignalBase {
  /*  extends SignalBase */
+ external factory Normalize();
  external num get max;
  external num get min;
  external Normalize dispose();
@@ -621,8 +682,9 @@ class Note{
 }
 
 @JS('OmniOscillator')
-class OmniOscillator{
+class OmniOscillator extends Source {
  /*  extends Source */
+ external factory OmniOscillator();
  external Signal get detune;
  external Signal get frequency;
  external Signal get modulationFrequency;
@@ -633,14 +695,16 @@ class OmniOscillator{
 }
 
 @JS('OR')
-class OR{
+class OR extends SignalBase {
  /*  extends SignalBase */
+ external factory OR();
  external OR dispose();
 }
 
 @JS('Oscillator')
-class Oscillator{
+class Oscillator extends Source {
  /*  extends Source */
+ external factory Oscillator();
  external Signal get detune;
  external Signal get frequency;
  external num get phase;
@@ -651,23 +715,26 @@ class Oscillator{
 }
 
 @JS('Panner')
-class Panner{
+class Panner extends Tone {
  /*  extends Tone */
+ external factory Panner();
  external Signal get pan;
  external Panner dispose();
 }
 
 @JS('PanVol')
-class PanVol{
+class PanVol extends Tone {
  /*  extends Tone */
+ external factory PanVol();
  external GainNode get output;
  external Signal get volume;
  external PanVol dispose();
 }
 
 @JS('Phaser')
-class Phaser{
+class Phaser extends StereoEffect {
  /*  extends StereoEffect */
+ external factory Phaser();
  external num get baseFrequency;
  external num get depth;
  external Signal get frequency;
@@ -675,15 +742,17 @@ class Phaser{
 }
 
 @JS('PingPongDelay')
-class PingPongDelay{
+class PingPongDelay extends StereoXFeedbackEffect {
  /*  extends StereoXFeedbackEffect */
+ external factory PingPongDelay();
  external Signal get delayTime;
  external PingPongDelay dispose();
 }
 
 @JS('Player')
-class Player{
+class Player extends Source {
  /*  extends Source */
+ external factory Player();
  external AudioBuffer get buffer;
  external num get duration;
  external bool get loop;
@@ -697,8 +766,9 @@ class Player{
 }
 
 @JS('PluckSynth')
-class PluckSynth{
+class PluckSynth extends Instrument {
  /*  extends Instrument */
+ external factory PluckSynth();
  external num get attackNoise;
  external Signal get dampening;
  external Signal get resonance;
@@ -707,8 +777,9 @@ class PluckSynth{
 }
 
 @JS('PolySynth')
-class PolySynth{
+class PolySynth extends Instrument {
  /*  extends Instrument */
+ external factory PolySynth();
  external List<dynamic> get voices;
  external PolySynth dispose();
  external /*todo type MethodSignature*/ dynamic get([List<dynamic> params]);
@@ -720,15 +791,17 @@ class PolySynth{
 }
 
 @JS('Pow')
-class Pow{
+class Pow extends SignalBase {
  /*  extends SignalBase */
+ external factory Pow();
  external num get value;
  external Pow dispose();
 }
 
 @JS('PulseOscillator')
-class PulseOscillator{
+class PulseOscillator extends Oscillator {
  /*  extends Oscillator */
+ external factory PulseOscillator();
  external Signal get detune;
  external Signal get frequency;
  external num get phase;
@@ -737,8 +810,9 @@ class PulseOscillator{
 }
 
 @JS('PWMOscillator')
-class PWMOscillator{
+class PWMOscillator extends Oscillator {
  /*  extends Oscillator */
+ external factory PWMOscillator();
  external Signal get detune;
  external Signal get frequency;
  external Signal get modulationFrequency;
@@ -748,16 +822,18 @@ class PWMOscillator{
 }
 
 @JS('Route')
-class Route{
+class Route extends SignalBase {
  /*  extends SignalBase */
+ external factory Route();
  external Signal get gate;
  external Route dispose();
  external Route select([num which, Time time]);
 }
 
 @JS('Sampler')
-class Sampler{
+class Sampler extends Instrument {
  /*  extends Instrument */
+ external factory Sampler();
  external Envelope get envelope;
  external BiquadFilterNode get filter;
  external Envelope get filterEnvelope;
@@ -770,16 +846,18 @@ class Sampler{
 }
 
 @JS('Scale')
-class Scale{
+class Scale extends SignalBase {
  /*  extends SignalBase */
+ external factory Scale();
  external num get max;
  external num get min;
  external Scale dispose();
 }
 
 @JS('ScaledEnvelope')
-class ScaledEnvelope{
+class ScaledEnvelope extends Envelope {
  /*  extends Envelope */
+ external factory ScaledEnvelope();
  external num get exponent;
  external num get max;
  external num get min;
@@ -787,8 +865,9 @@ class ScaledEnvelope{
 }
 
 @JS('ScaleExp')
-class ScaleExp{
+class ScaleExp extends SignalBase {
  /*  extends SignalBase */
+ external factory ScaleExp();
  external num get exponent;
  external num get max;
  external num get min;
@@ -796,16 +875,18 @@ class ScaleExp{
 }
 
 @JS('Select')
-class Select{
+class Select extends SignalBase {
  /*  extends SignalBase */
+ external factory Select();
  external Signal get gate;
  external Select dispose();
  external Select select(num which, [Time time]);
 }
 
 @JS('Signal')
-class Signal{
+class Signal extends SignalBase {
  /*  extends SignalBase */
+ external factory Signal();
  external Type get units;
  external dynamic get value;
  external Signal cancelScheduledValues(Time startTime);
@@ -822,14 +903,16 @@ class Signal{
 }
 
 @JS('SignalBase')
-class SignalBase{
+class SignalBase extends Tone {
  /*  extends Tone */
+ external factory SignalBase();
  external SignalBase connect(dynamic node, [num outputNumber, num inputNumber]);
 }
 
 @JS('Source')
-class Source{
+class Source extends Tone {
  /*  extends Tone */
+ external factory Source();
  external String get State;
  external  dynamic onended();
  external dynamic get state;
@@ -842,45 +925,51 @@ class Source{
 }
 
 @JS('Split')
-class Split{
+class Split extends Tone {
  /*  extends Tone */
+ external factory Split();
  external GainNode get left;
  external GainNode get right;
  external Split dispose();
 }
 
 @JS('StereoEffect')
-class StereoEffect{
+class StereoEffect extends Effect {
  /*  extends Effect */
+ external factory StereoEffect();
  external GainNode get effectReturnL;
  external GainNode get effectReturnR;
  external StereoEffect dispose();
 }
 
 @JS('StereoFeedbackEffect')
-class StereoFeedbackEffect{
+class StereoFeedbackEffect extends FeedbackEffect {
  /*  extends FeedbackEffect */
+ external factory StereoFeedbackEffect();
  external Signal get feedback;
  external StereoFeedbackEffect dispose();
 }
 
 @JS('StereoWidener')
-class StereoWidener{
+class StereoWidener extends MidSideEffect {
  /*  extends MidSideEffect */
+ external factory StereoWidener();
  external Signal get width;
  external StereoWidener dispose();
 }
 
 @JS('StereoXFeedbackEffect')
-class StereoXFeedbackEffect{
+class StereoXFeedbackEffect extends FeedbackEffect {
  /*  extends FeedbackEffect */
+ external factory StereoXFeedbackEffect();
  external Signal get feedback;
  external StereoXFeedbackEffect dispose();
 }
 
 @JS('Switch')
-class Switch{
+class Switch extends SignalBase {
  /*  extends SignalBase */
+ external factory Switch();
  external Signal get gate;
  external Switch close(Time time);
  external Switch dispose();
@@ -892,8 +981,9 @@ class Time{
 }
 
 @JS('Transport')
-class Transport{
+class Transport extends Tone {
  /*  extends Tone */
+ external factory Transport();
  external Signal get bpm;
  external bool get loop;
  external Time get loopEnd;
@@ -929,8 +1019,9 @@ class TransportState{
 }
 
 @JS('WaveShaper')
-class WaveShaper{
+class WaveShaper extends SignalBase {
  /*  extends SignalBase */
+ external factory WaveShaper();
  external List<num> get curve;
  external String get oversample;
 }
