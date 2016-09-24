@@ -6,7 +6,7 @@ import 'dart:html';
 class ToneLoader {
   static bool debug = false;
   static String js_src =
-    "/packages/tonejs/js/Tone${!debug ? '.min' : 'debug'}.js";
+    "/packages/tonejs/js/Tone${!debug ? '.min' : ''}.js";
   static bool isLoaded = false;
   static bool inDuring = false;
   static Completer compLoad = new Completer();
