@@ -1,7 +1,7 @@
 name: tonejs
 description: A starting point for Dart libraries or applications.
-version: 0.0.1
-author: Vladislav Gordievskiy
+version: 0.0.2
+author: Vladislav Gordievskiy, iarocode
 
 environment:
   sdk: '>=1.0.0 <2.0.0'
