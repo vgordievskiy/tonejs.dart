@@ -6,7 +6,11 @@ import "package:js/js.dart";
 @anonymous
 class POscillator {
   external String get type;
-  external factory POscillator({String type});
+  external List<int> get partials;
+  external factory POscillator({
+    String type,
+    List<int> partials
+  });
 }
 
 class PEnvelope {
@@ -48,5 +52,18 @@ class PSynth {
      POscillator oscillator,
      PEnvelope envelope,
      PFilterEnvelope filterEnvelope
+  });
+}
+
+@JS()
+@anonymous
+class PPolySynth {
+  external int get polyphony;
+  external Function get voice;
+  external PSynth get defaults;
+  external factory PPolySynth({
+    int polyphony,
+    Function voice,
+    PSynth defaults
   });
 }
