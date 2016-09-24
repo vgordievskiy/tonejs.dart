@@ -780,7 +780,7 @@ class PluckSynth extends Instrument {
 @JS('PolySynth')
 class PolySynth extends Instrument {
  /*  extends Instrument */
- external factory PolySynth(PPolySynth args);
+ external factory PolySynth([PPolySynth args]);
  external List<dynamic> get voices;
  external PolySynth dispose();
  external /*todo type MethodSignature*/ dynamic get([List<dynamic> params]);
