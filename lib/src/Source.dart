@@ -73,6 +73,19 @@ class AmplitudeEnvelope extends Envelope {
  external AmplitudeEnvelope dispose();
 }
 
+@JS('Synth')
+class Synth extends Monophonic {
+ /*  extends Monophonic */
+ external factory Synth();
+ external MonoSynth get carrier;
+ external Signal get frequency;
+ external num get harmonicity;
+ external MonoSynth get modulator;
+ external Synth dispose();
+ external Synth triggerEnvelopeAttack([dynamic time, num velocity]);
+ external Synth triggerEnvelopeRelease([dynamic time]);
+}
+
 @JS('AMSynth')
 class AMSynth extends Monophonic {
  /*  extends Monophonic */
@@ -780,7 +793,7 @@ class PluckSynth extends Instrument {
 @JS('PolySynth')
 class PolySynth extends Instrument {
  /*  extends Instrument */
- external factory PolySynth([PPolySynth args]);
+ external factory PolySynth([int polyphony, var voice, PSynth params]);
  external List<dynamic> get voices;
  external PolySynth dispose();
  external /*todo type MethodSignature*/ dynamic get([List<dynamic> params]);
