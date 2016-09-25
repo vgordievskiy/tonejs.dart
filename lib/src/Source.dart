@@ -76,7 +76,7 @@ class AmplitudeEnvelope extends Envelope {
 @JS('Synth')
 class Synth extends Monophonic {
  /*  extends Monophonic */
- external factory Synth();
+ external factory Synth([dynamic params]);
  external MonoSynth get carrier;
  external Signal get frequency;
  external num get harmonicity;
