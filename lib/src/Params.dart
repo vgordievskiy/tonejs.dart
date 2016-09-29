@@ -42,13 +42,15 @@ class PFilterEnvelope {
 @JS()
 @anonymous
 class PSynth {
-  external String get portamento;
+  external double get volume;
+  external double get portamento;
   external POscillator get oscillator;
   external PEnvelope get envelope;
   external PFilterEnvelope get filterEnvelope;
 
   external factory PSynth({
-     String portamento,
+     double volume,
+     double portamento,
      POscillator oscillator,
      PEnvelope envelope,
      PFilterEnvelope filterEnvelope
