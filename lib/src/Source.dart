@@ -378,7 +378,7 @@ class Follower extends Tone {
 @JS('Freeverb')
 class Freeverb extends Effect {
  /*  extends Effect */
- external factory Freeverb();
+ external factory Freeverb([double roomSize, double dampening]);
  external Signal get dampening;
  external Signal get roomSize;
  external Freeverb dispose();
