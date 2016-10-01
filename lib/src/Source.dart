@@ -89,7 +89,7 @@ class Synth extends Monophonic {
 @JS('AMSynth')
 class AMSynth extends Monophonic {
  /*  extends Monophonic */
- external factory AMSynth();
+ external factory AMSynth([dynamic params]);
  external MonoSynth get carrier;
  external Signal get frequency;
  external num get harmonicity;
@@ -237,7 +237,7 @@ class Distortion extends Effect {
 @JS('DuoSynth')
 class DuoSynth extends Monophonic {
  /*  extends Monophonic */
- external factory DuoSynth();
+ external factory DuoSynth([dynamic params]);
  external Signal get frequency;
  external num get harmonicity;
  external Signal get vibratoAmount;
@@ -355,7 +355,7 @@ class Filter extends Tone {
 @JS('FMSynth')
 class FMSynth extends Monophonic {
  /*  extends Monophonic */
- external factory FMSynth();
+ external factory FMSynth([dynamic params]);
  external MonoSynth get carrier;
  external Signal get frequency;
  external num get harmonicity;
@@ -591,7 +591,7 @@ class Monophonic extends Instrument {
 @JS('MonoSynth')
 class MonoSynth extends Monophonic {
  /*  extends Monophonic */
- external factory MonoSynth();
+ external factory MonoSynth([dynamic params]);
  external Signal get detune;
  external Envelope get envelope;
  external Filter get filter;
@@ -666,7 +666,7 @@ class Noise extends Source {
 @JS('NoiseSynth')
 class NoiseSynth extends Instrument {
  /*  extends Instrument */
- external factory NoiseSynth();
+ external factory NoiseSynth([dynamic params]);
  external Envelope get envelope;
  external Filter get filter;
  external Envelope get filterEnvelope;
@@ -782,7 +782,7 @@ class Player extends Source {
 @JS('PluckSynth')
 class PluckSynth extends Instrument {
  /*  extends Instrument */
- external factory PluckSynth();
+ external factory PluckSynth([dynamic params]);
  external num get attackNoise;
  external Signal get dampening;
  external Signal get resonance;
